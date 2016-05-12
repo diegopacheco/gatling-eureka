@@ -34,14 +34,12 @@ class EurekaProtocolBuilder(url: String, appName: String) {
 
   def ip(): String = {
     val eurekaRequestURL: String = url + "/v2/apps/" + appName
-    println("This code runs: " + eurekaRequestURL)
 
     val u = new URL(eurekaRequestURL);
     val uc = u.openConnection();
     val gzInputStream = new GZIPInputStream(new BufferedInputStream(uc.getInputStream))
     val eurekaXMLResponse = Source.fromInputStream(gzInputStream).closeAfterGetLines().mkString
     val eurekaXML = scala.xml.XML.loadString(eurekaXMLResponse)
-    println("Response xml: " + eurekaXML)
 
     val ip: String = (eurekaXML \ "instance" \ "ipAddr").text
     return ip
