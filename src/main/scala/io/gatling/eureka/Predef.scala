@@ -15,8 +15,6 @@
  */
 package io.gatling.eureka
 
-import io.gatling.core.feeder.RecordSeqFeederBuilder
-
 /**
  * Netflix/Eureka Gatling integration.
  *
