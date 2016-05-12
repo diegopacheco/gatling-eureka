@@ -58,5 +58,5 @@ Have Fun.
 PS: Why this code is not on Gatling repo? 
 https://github.com/gatling/gatling/pull/3014
 
-Cheers,
+Cheers, <BR>
 Diego Pacheco
